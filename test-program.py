@@ -2,7 +2,7 @@ import sys
 from time import sleep
 from random import random
 
-LINES = 100
+LINES = 10
 WAIT = 0.5
 OUT_STR = "Train Loss: {} Validation Loss: {} D(x): {} G(D(x)): {}"
 
