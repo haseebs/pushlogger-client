@@ -1,0 +1,15 @@
+#!/bin/bash
+# Usage: python myScriptName.py | ./push myChannelName
+
+CHANNEL_NAME=$1
+URL="http://puushlogger.herokuapp.com"
+
+echo "PUSHLOGGER ACTIVE"
+echo "Pushing to channel" $CHANNEL_NAME
+TARGET=$URL/logs/$CHANNEL_NAME
+
+while read line; do
+    echo $line
+    $(curl -s -d "message=$line" -X POST $TARGET)
+done
+
